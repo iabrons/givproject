@@ -7,6 +7,8 @@
 </head>
 
 <body>
+<!--JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <table>
 		<tr class="nav-bar-item">
 			<td>
@@ -23,7 +25,7 @@
 			<td>
 				<a href="leaderboard.html" class="nav-bar-item">Leader Board</a>
 
-				<a href="voting.html" class="nav-bar-item">Voting</a>
+				<a href="voting.php" class="nav-bar-item">Voting</a>
 			</td>		
 		</tr>
 </table>
@@ -33,10 +35,14 @@
 			<input type="file" accept="image/*" capture="camera">
 		</td>-->
 		<td>
-			<form action="upload.php" method="post" enctype="multipart/form-data">
+		<script>
+		$('.form').submit(function() {
+var name = $(".name").val(); var email = $(".email").val(); var message = $(".message").val(); var dataString = 'name=' + name + '&email=' + email + '&message=' + message; $.ajax({ type : "POST", url : "mail.php", data : dataString, cache : false, success : function() { $(".form").hide(); $(".notice").fadeIn(400); } }); return false; });
+		</script>	
+			<form action="../upload.php" method="post" enctype="multipart/form-data">
 			Select image to upload:
 			<input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" capture="camera">
-			<input type="submit" value="Upload Image" name="submit">
+			<input type="submit" value="Upload Image" name="submit" >
 			</form>
 		</td>
 	</tr>

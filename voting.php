@@ -1,15 +1,8 @@
 <!DOCTYPE html>
+<html>
 
-<html lang="en">
 <head>
-  <meta charset="utf-8">
-
   <link rel="stylesheet" type="text/css" href="sheet.css" />
-  
-  <title>GIV Project</title>
-  <meta name="description" content="GIV Project">
-  <meta name="author" content="Ian Brons">
-  <meta name="author" content="Michael Isabell">
 
 </head>
 
@@ -34,7 +27,30 @@
 			</td>		
 		</tr>
 	</table>
-
 </body>
 
 </html>
+
+
+<?php
+    $directory = '../snapattack';
+
+    if (! is_dir($directory)) {
+        exit('Invalid diretory path');
+    }
+
+    //$files = array();
+
+    foreach (scandir($directory) as $file) {
+        if ('.' === $file) continue;
+        if ('..' === $file) continue;
+
+        //$files[] = $file;
+		$var = var_export($file, true);
+		//trim($var,"'");		
+		//echo $var;
+		print '<img src='.$var .'alt="img" height="100" width="100">';
+    }
+
+    //var_dump($files);
+?>
