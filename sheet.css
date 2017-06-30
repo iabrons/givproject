@@ -1,0 +1,30 @@
+html,body
+{
+	font-family: verdana;
+	font-size: 12pt;
+	width: 100;
+	height: 100;
+	color: #000000;
+	background-color: #add8e6;
+	margin: 0px;
+}
+
+#tbl_nav
+{
+	height: 10%;
+	width: 50%;
+	text-align: center;
+	color: #ffffff;
+	vertical-align: top;
+}
+
+#tbl_nav a:link,#tbl-nav a:visited
+{
+	text-decoration: none;
+	font-size: 150%;
+}
+
+table
+{
+	margin: auto;
+=}
