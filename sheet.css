@@ -22,18 +22,18 @@ html,body
 {
 	height: 10%;
 	width: 50%;
-	font-size: 120%;
+	font-size: 110%;
 	text-align: center;
 	color: #ffff00;
 	border-style: solid;
-	border-width: 10px;
+	border-width: 2px;
 	border-color: #000000
 }
 
 .nav-bar-item a:link,.nav-bar-item a:visited
 {
 	text-decoration: none;
-
+	color: #ffff00;	
 }
 
 table
