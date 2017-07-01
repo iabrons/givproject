@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="sheet.css" />
+  <link rel="stylesheet" type="text/css" href="../sheet.css" />
 
 </head>
 
@@ -10,9 +10,9 @@
 	<table>
 		<tr class="nav-bar-item">
 			<td>
-				<a href="index.html" class="nav-bar-item">Home</a>
+				<a href="../index.html" class="nav-bar-item">Home</a>
 
-				<a href="camera.html" class="nav-bar-item">Camera</a>
+				<a href="../camera.html" class="nav-bar-item">Camera</a>
 			</td>
 		</tr>
 		<tr>		
@@ -21,7 +21,7 @@
 		</tr>		
 		<tr class="nav-bar-item">
 			<td>
-				<a href="leaderboard.html" class="nav-bar-item">Leader Board</a>
+				<a href="../leaderboard.html" class="nav-bar-item">Leader Board</a>
 
 				<a href="voting.php" class="nav-bar-item">Voting</a>
 			</td>		
@@ -44,9 +44,17 @@
     foreach (scandir($directory) as $file) {
         if ('.' === $file) continue;
         if ('..' === $file) continue;
-
+		
         //$files[] = $file;
 		$var = var_export($file, true);
+		if($var == "'upload.php'")
+			continue;
+		else if($var == "'camera.html'")
+			continue;
+		else if($var == "'voting.php'")
+			continue;
+		else if($var == "'error_log'")
+			continue;		
 		//trim($var,"'");		
 		//echo $var;
 		print '<img src='.$var .'alt="img" height="100" width="100">';
