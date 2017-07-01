@@ -27,11 +27,15 @@
 			</td>		
 		</tr>
 	</table>
+
+	<form>
+	<button type="button">test button</button>
+	</form>
 </body>
 
 </html>
 
-
+<?php include("image-voting.php")?>
 <?php
     $directory = '../snapattack';
 
@@ -54,10 +58,13 @@
 		else if($var == "'voting.php'")
 			continue;
 		else if($var == "'error_log'")
-			continue;		
+			continue;
+		else if($var == "'information.csv'")
+			continue;
 		//trim($var,"'");		
 		//echo $var;
-		print '<img src='.$var .'alt="img" height="100" width="100">';
+		print '<img src='.$var .'alt="img" height="500" width="500">';
+
     }
 
     //var_dump($files);
