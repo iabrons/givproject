@@ -27,10 +27,6 @@
 			</td>		
 		</tr>
 	</table>
-
-	<form>
-	<button type="button">test button</button>
-	</form>
 </body>
 
 </html>
@@ -44,9 +40,10 @@
     }
 
     //$files = array();
-
+	$arrayOfStuff = array();
+	$arrayOfvals = array();
     foreach (scandir($directory) as $file) {
-        if ('.' === $file) continue;
+		if ('.' === $file) continue;
         if ('..' === $file) continue;
 		
         //$files[] = $file;
@@ -61,11 +58,34 @@
 			continue;
 		else if($var == "'information.csv'")
 			continue;
-		//trim($var,"'");		
-		//echo $var;
-		print '<img src='.$var .'alt="img" height="500" width="500">';
+		else if($var == "'namecount.csv'")
+			continue;
+		else if($var == "'counter.txt'")
+			continue;		
+		else if($var == "'vote.php'")
+			continue;		
+		else if($var == "'idinfo.txt'")
+			continue;
+		
+		
+		$myfile = fopen("idinfo.txt", "w") or die("Unable to open file!");
+		
+		fwrite($myfile, $var);
+		fclose($myfile);
+		
+		
+		print '<img src='.$var .'alt="img" height="800" width="450">';
+		print '
+			<form>
+				<button action="vote.php" method="post">
+					Vote for
+				</button>
+				<button>
+					Invalid
+				</button>
+			</form>';
+
 
     }
 
-    //var_dump($files);
 ?>

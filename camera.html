@@ -40,7 +40,7 @@
 var name = $(".name").val(); var email = $(".email").val(); var message = $(".message").val(); var dataString = 'name=' + name + '&email=' + email + '&message=' + message; $.ajax({ type : "POST", url : "mail.php", data : dataString, cache : false, success : function() { $(".form").hide(); $(".notice").fadeIn(400); } }); return false; });
 		</script>	
 			<form action="./snapattack/upload.php" method="post" enctype="multipart/form-data">
-			Select image to upload:
+			<p id="select">Select image to upload:</p>
 			<input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" capture="camera">
 			<input type="submit" value="Upload Image" name="submit" >
 			</form>
